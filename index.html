@@ -1,63 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | TrackTitans</title>
-    <meta name="title" content="Home | TrackTitans">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Primary Meta Tags -->
+    <title>TrackTitans</title>
+    <meta name="title" content="TrackTitans">
     <meta name="description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Home | TrackTitans">
+    <meta property="og:title" content="TrackTitans">
     <meta property="og:description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
     <meta property="og:image" content="https://tracktitans.com/favicon.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Home | TrackTitans">
+    <meta property="twitter:title" content="TrackTitans">
     <meta property="twitter:description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
     <meta property="twitter:image" content="https://tracktitans.com/favicon.png">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="xpcss/XP.css">
+    <link rel="stylesheet" href="simulation.css">
 </head>
-<body>
-    <h1>TrackTitans</h1>
-    <p>Web-based simulation of Indian Railway Section Controller operations</p>
-    <details>
-        <summary>Navigation</summary>
-        <a href="./">Home</a><br>
-        <a href="/simulation/">Simulation</a><br>
-        <br>
-        <span>Docs</span>
-        <hr>
-        <a href="/docs/quickstart/">Quick Start</a><br>
-        <a href="/docs/commands/">Commands</a><br>
-        <a href="/docs/trackobjects/">Track Objects</a><br>
-        <a href="/docs/userinterface/">User Interface</a>
-    </details>
-    <h2>Home</h2>
-    <a href="./simulation/">Go to the simulation ></a>
-    <p>TrackTitans simulates the Indian Railway Section Controller system used for mainline operations on the Delhi-Agra section. Real commands and track data inspired by Indian Railway operations are included in the simulation.</p>
-    <p>The following systems are being used in the section:</p>
-    <ul>
-        <li>
-            <p><b>Electronic Interlocking</b> - Main Signalling Control System</p>
-        </li>
-        <li>
-            <p><b>FOIS</b> - Freight Operations Information System</p>
-        </li>
-        <li>
-            <p><b>CRIS</b> - Centre for Railway Information Systems</p>
-        </li>
-    </ul>
-    <p>The simulation is written in JavaScript, is open source and can run on any web browser</p>
-    <img src="./assets/screenshot.png" alt="">
-    <small>Screenshot of the simulation</small>
-    <footer>
-        <a href="https://github.com/tracktitans/TrackTitans">GitHub</a>
-        <br>
-        <a href="./simulation/">Simulation</a>
-    </footer>
+
+<body onload="startSimulation()">
+    <div class="bottom top">
+        <div onclick="toggleFullScreen()" class="status-bar">
+            <p id="day"></p>
+            <p id="date"></p>
+            <p id="clock"></p>
+        </div>
+        <div class="screenswitch" id="screenswitch">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="status-bar">
+            <div style="width: 50%; display: flex; flex-wrap: nowrap; margin-right: 3px;">
+                <input style="width: calc(25% - 6px); margin: 0 6px 0 6px;" type="text" value="Section Controller" disabled>
+                <input id="output" style="width: calc(65% - 6px); margin: 0 6px 0 6px; color: red;" type="text" value="" disabled>
+                <input style="width: calc(10% - 6px); margin: 0 6px 0 6px;" type="text" value="NDLS" disabled>
+                <input style="width: calc(10% - 6px); margin: 0 6px 0 6px;" type="text" value="*" disabled>
+            </div>
+            <div style="width: 50%; display: flex; flex-wrap: nowrap; margin-left: 3px;">
+                <input style="width: 100%; text-transform: uppercase;" id="terminal" type="text">
+            </div>
+        </div>
+    </div>
+    <div id="firstscreen" class="start">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">Section Controller</div>
+            </div>
+            <section class="field-row" style="justify-content: flex-end">
+                <button onclick="secondScreen()">Authorization</button>
+                <button>Cancel</button>
+            </section>
+        </div>
+    </div>
+    <div id="secondscreen" class="start" style="display: none">
+        <div class="window" style="width: 400px">
+            <div class="title-bar">
+                <div class="title-bar-text">Authority</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <fieldset>
+                    <legend>Predefined operator areas</legend>
+                    <ul class="tree-view">
+                        <li class="focused">Northern Railway - Section Controller</li>
+                        <li>Northern Railway - Help and information pictures</li>
+                        <li>Northern Railway - Start up pictures</li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Role</legend>
+                    <ul class="tree-view">
+                        <li class="focused">SC - Section Controller</li>
+                        <li>ASM - Assistant Station Master</li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Authority area</legend>
+                    <section class="field-row" style="justify-content: space-around">
+                        <div class="field-row">
+                            <input checked id="radio17" type="radio" name="fieldset-example2">
+                            <label for="radio17">With authority</label>
+                        </div>
+                        <div class="field-row">
+                            <input id="radio18" type="radio" name="fieldset-example2">
+                            <label for="radio18">Without authority</label>
+                        </div>
+                    </section>
+                    <ul class="tree-view">
+                        <li class="focused">Authority area NDLS-AGC - Delhi-Agra Section</li>
+                        <li>Authority area NDLS-TDL - New Delhi-Tundla</li>
+                        <li>Authority area TDL-AGC - Tundla-Agra Cantt</li>
+                    </ul>
+                </fieldset>
+
+                <section class="field-row" style="justify-content: space-between">
+                    <button onclick="mainScreen()">OK</button>
+                    <button onclick="firstScreen()">Cancel</button>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="tyl" class="start" style="display: none;">
+        <div class="window">
+            <div class="title-bar">
+                <div id="tyltitle" class="title-bar-text"></div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="closetyl()"></button>
+                </div>
+            </div>
+            <div class="window-body" style="margin: 0px 3px;">
+                <iframe class="tyl" id="tyliframe" src="tyl/" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="tracks wrap" id="tracks">
+    </div>
 </body>
+<script src="trackinfo.js"></script>
+<script src="ui.js"></script>
+<script src="main.js"></script>
+<script src="traffic.js"></script>
 </html>
