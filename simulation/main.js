@@ -524,10 +524,10 @@ function findNextClosedSignalOfTrain(train) {
 function tyl() {
     var d = new Date()
 
-    var html = "<p><span>Tren Yer Listesi </span> GEO. NODE 1 " + d.toISOString().slice(0, 10) + " " + d.toTimeString().slice(0, 8) + "</p><hr><table><thead><td><span>TREN NUMARASI</span></td><td><span>QUEUE POS.</span></td><td><span>TIME</span></td><td><span>POS.</span></td><td><span>SIG IN STOP</span></td></thead>"
+    var html = "<p><span>Train Position List </span> CONTROL NODE 1 " + d.toISOString().slice(0, 10) + " " + d.toTimeString().slice(0, 8) + "</p><hr><table><thead><td><span>TRAIN NUMBER</span></td><td><span>QUEUE POS.</span></td><td><span>TIME</span></td><td><span>POS.</span></td><td><span>SIG IN STOP</span></td></thead>"
     
     for (let [key, value] of Object.entries(trains)) {
-        html += "<tr><td>" + key + "</td><td></td><td></td><td> IST " + findNextSignalOfTrain(key).slice(1) + "</td><td><span>IST " + findNextClosedSignalOfTrain(key).slice(1) + "</span></td></tr>"
+        html += "<tr><td>" + key + "</td><td></td><td></td><td> NDLS " + findNextSignalOfTrain(key).slice(1) + "</td><td><span>NDLS " + findNextClosedSignalOfTrain(key).slice(1) + "</span></td></tr>"
     }
 
     document.getElementById("tyliframe").contentWindow.document.body.innerHTML = html

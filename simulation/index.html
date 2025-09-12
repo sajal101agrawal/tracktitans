@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <!-- Primary Meta Tags -->
-    <title>DispatchStation</title>
-    <meta name="title" content="DispatchStation">
-    <meta name="description" content="Simulation of the interlocking and ATS system which is being used in the M1 line of Istanbul metro">
+    <title>TrackTitans</title>
+    <meta name="title" content="TrackTitans">
+    <meta name="description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="DispatchStation">
-    <meta property="og:description" content="Simulation of the interlocking and ATS system which is being used in the M1 line of Istanbul metro">
-    <meta property="og:image" content="https://dispatchstation.baranonen.com/favicon.png">
+    <meta property="og:title" content="TrackTitans">
+    <meta property="og:description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
+    <meta property="og:image" content="https://tracktitans.com/favicon.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="DispatchStation">
-    <meta property="twitter:description" content="Simulation of the interlocking and ATS system which is being used in the M1 line of Istanbul metro">
-    <meta property="twitter:image" content="https://dispatchstation.baranonen.com/favicon.png">
+    <meta property="twitter:title" content="TrackTitans">
+    <meta property="twitter:description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
+    <meta property="twitter:image" content="https://tracktitans.com/favicon.png">
     <link rel="stylesheet" href="../xpcss/XP.css">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -38,9 +38,9 @@
     <div class="bottom">
         <div class="status-bar">
             <div style="width: 50%; display: flex; flex-wrap: nowrap; margin-right: 3px;">
-                <input style="width: calc(25% - 6px); margin: 0 6px 0 6px;" type="text" value="Dispatcher 1" disabled>
+                <input style="width: calc(25% - 6px); margin: 0 6px 0 6px;" type="text" value="Section Controller" disabled>
                 <input id="output" style="width: calc(65% - 6px); margin: 0 6px 0 6px; color: red;" type="text" value="" disabled>
-                <input style="width: calc(10% - 6px); margin: 0 6px 0 6px;" type="text" value="IST" disabled>
+                <input style="width: calc(10% - 6px); margin: 0 6px 0 6px;" type="text" value="NDLS" disabled>
                 <input style="width: calc(10% - 6px); margin: 0 6px 0 6px;" type="text" value="*" disabled>
             </div>
             <div style="width: 50%; display: flex; flex-wrap: nowrap; margin-left: 3px;">
@@ -51,7 +51,7 @@
     <div id="firstscreen" class="start">
         <div class="window">
             <div class="title-bar">
-                <div class="title-bar-text">Dispatcher</div>
+                <div class="title-bar-text">Section Controller</div>
             </div>
             <section class="field-row" style="justify-content: flex-end">
                 <button onclick="secondScreen()">Authorization</button>
@@ -73,17 +73,17 @@
                 <fieldset>
                     <legend>Predefined operator areas</legend>
                     <ul class="tree-view">
-                        <li class="focused">Hafif Metro - Dispecer</li>
-                        <li>Hafif Metro - Help and information pictures</li>
-                        <li>Hafif Metro - Start up pictures</li>
+                        <li class="focused">Northern Railway - Section Controller</li>
+                        <li>Northern Railway - Help and information pictures</li>
+                        <li>Northern Railway - Start up pictures</li>
                     </ul>
                 </fieldset>
 
                 <fieldset>
                     <legend>Role</legend>
                     <ul class="tree-view">
-                        <li class="focused">DIS - Dispecer</li>
-                        <li>INF - Informer</li>
+                        <li class="focused">SC - Section Controller</li>
+                        <li>ASM - Assistant Station Master</li>
                     </ul>
                 </fieldset>
 
@@ -100,9 +100,9 @@
                         </div>
                     </section>
                     <ul class="tree-view">
-                        <li class="focused">Authority area IST - Hafif Metro</li>
-                        <li>Authority area IST1 - Asama1</li>
-                        <li>Authority area IST2 - Asama2</li>
+                        <li class="focused">Authority area NDLS-AGC - Delhi-Agra Section</li>
+                        <li>Authority area NDLS-TDL - New Delhi-Tundla</li>
+                        <li>Authority area TDL-AGC - Tundla-Agra Cantt</li>
                     </ul>
                 </fieldset>
 

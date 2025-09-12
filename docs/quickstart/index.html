@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Start | DispatchStation</title>
-    <meta name="title" content="Quick Start | DispatchStation">
-    <meta name="description" content="Simulation of the EBICOS 900 traffic management and dispatching system which is being used in the M1 line of Istanbul metro">
+    <title>Quick Start | TrackTitans</title>
+    <meta name="title" content="Quick Start | TrackTitans">
+    <meta name="description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Quick Start | DispatchStation">
-    <meta property="og:description" content="Simulation of the EBICOS 900 traffic management and dispatching system which is being used in the M1 line of Istanbul metro">
-    <meta property="og:image" content="https://dispatchstation.baranonen.com/favicon.png">
+    <meta property="og:title" content="Quick Start | TrackTitans">
+    <meta property="og:description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
+    <meta property="og:image" content="https://tracktitans.com/favicon.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Quick Start | DispatchStation">
-    <meta property="twitter:description" content="Simulation of the EBICOS 900 traffic management and dispatching system which is being used in the M1 line of Istanbul metro">
-    <meta property="twitter:image" content="https://dispatchstation.baranonen.com/favicon.png">
+    <meta property="twitter:title" content="Quick Start | TrackTitans">
+    <meta property="twitter:description" content="Simulation of the Indian Railway Section Controller system for Delhi-Agra mainline operations">
+    <meta property="twitter:image" content="https://tracktitans.com/favicon.png">
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-    <h1>DispatchStation</h1>
-    <p>Web-based simulation of the EBICOS 900 traffic management and dispatching system</p>
+    <h1>TrackTitans</h1>
+    <p>Web-based simulation of Indian Railway Section Controller operations</p>
     <details>
         <summary>Navigation</summary>
         <a href="../../">Home</a><br>
@@ -39,12 +39,12 @@
     <h2>Quick Start</h2>
     <p>This page lists the most basic instructions to run the train traffic. For more detailed information, see the other pages as well.</p>
     <h3>Signals</h3>
-    <p>Most of the signals are in automatic mode and the dispatcher doesn't need to intervene. However, some of them require the input of the dispatcher because the trains have different destinations. Here's a list of them:</p>
+    <p>Most of the signals are in automatic mode and the Section Controller doesn't need to intervene. However, some of them require the input of the Section Controller because the trains have different destinations. Here's a list of them:</p>
     <ul>
         <li>
             <h4>155</h4>
-            <p>Trains with the prefix "HL" should be routed to signal 201.</p>
-            <p>Trains with the prefix "KR" should be routed to signal 303.</p>
+            <p>Express trains (12xxx series) from NDLS should be routed to signal 201.</p>
+            <p>Mail trains (13xxx series) from NDLS should be routed to signal 303.</p>
         </li>
         <li>
             <h4>202</h4>
@@ -56,8 +56,8 @@
         </li>
         <li>
             <h4>104</h4>
-            <p>Trains with the prefix "HY" should be routed to signal 350.</p>
-            <p>Trains with the prefix "KY" should be routed to signal 352.</p>
+            <p>Passenger trains (15xxx series) should be routed to signal 350.</p>
+            <p>Freight trains (19xxx series) should be routed to signal 352.</p>
         </li>
         <li>
             <h4>101</h4>
@@ -82,45 +82,45 @@
     <p>Please note that the automatic signals only open routes when a train passes them. This means that the first route after the signal is taken to the automatic mode should be opened manually.</p>
     <h3>Train Numbers</h3>
     <img src="../../assets/trainnumber.png" alt="A train number">
-    <p>All of the trains are described with their 2-digit route prefix and 3-digit fixed numbers. This prefix is important because the passenger information system (PIS) lists the trains using these digits.</p>
-    <p>Therefore, the prefix needs to be updated when a train reaches the terminal stations. Here's a table that lists the appropriate prefixes:</p>
+    <p>All trains are described with their 5-digit Indian Railway train numbers. Express trains start with 12xxx, Mail trains with 13xxx, Passenger trains with 15xxx, and Freight trains with 19xxx series.</p>
+    <p>Train numbers remain constant throughout their journey. Here's a table that lists the train series:</p>
     <table>
         <tr>
-            <th>Old</th>
-            <th>New</th>
-            <th>New Destination</th>
+            <th>Train Series</th>
+            <th>Type</th>
+            <th>Description</th>
         </tr>
         <tr>
-            <td>HY</td>
-            <td>HL</td>
-            <td>Havalimanı (Airport)</td>
+            <td>12xxx</td>
+            <td>Express</td>
+            <td>Premium Express Services</td>
         </tr>
         <tr>
-            <td>KY</td>
-            <td>KR</td>
-            <td>Kirazlı</td>
+            <td>13xxx</td>
+            <td>Mail</td>
+            <td>Mail/Express Services</td>
         </tr>
         <tr>
-            <td>HL</td>
-            <td>HY</td>
-            <td>Yenikapı (from Havalimanı)</td>
+            <td>15xxx</td>
+            <td>Passenger</td>
+            <td>Passenger Services</td>
         </tr>
         <tr>
-            <td>KR</td>
-            <td>KY</td>
-            <td>Yenikapı (from Kirazlı)</td>
+            <td>19xxx</td>
+            <td>Freight</td>
+            <td>Freight Services</td>
         </tr>
     </table>
-    <p>The prefix "DP" means Depo / <i>Depot</i> and shows that the train is going to the depot in the PIS screens.</p>
+    <p>Special train numbers starting with "0" indicate empty coaching stock or light engine movements to/from depot.</p>
     <p>Trains can be renamed using the following commands:</p>
     <ul>
         <li>
             <h4>TND [oldname] [newname]</h4>
-            <p>Example: TND HY521 HL521</p>
+            <p>Example: TND 12301 12302</p>
         </li>
         <li>
             <h4>STG [nextsignal] [newname]</h4>
-            <p>Example: STG 103 HL521</p>
+            <p>Example: STG 103 12301</p>
         </li>
     </ul>
     <h3>Commands</h3>
@@ -128,7 +128,7 @@
     <p>Commands are typed to the terminal, which is placed at the bottom right of the screen. To execute a command, hit Enter.</p>
     <p>Errors from the commands are shown on the left side, with the red color.</p>
     <footer>
-        <a href="https://github.com/baranonen/DispatchStation">GitHub</a>
+        <a href="https://github.com/tracktitans/TrackTitans">GitHub</a>
         <br>
         <a href="../../simulation/">Simulation</a>
     </footer>
