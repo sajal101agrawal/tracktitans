@@ -51,137 +51,137 @@
             <th>Example</th>
         </tr>
         <tr>
-            <td><b>YTT</b><br>Yol Tanzim Talebi<br><i>Route Opening Request</i></td>
+            <td><b>YTT</b><br><i>Route Opening Request</i></td>
             <td>Openes a route between specified signals. When not possible, adds the route to the queue so that it can be opened when possible.</td>
             <td>YTT 155 201 / YTT 304 302 154</td>
         </tr>
         <tr>
-            <td><b>YTI</b><br>Yol Tanzim İptali<br><i>Cancelling of Route Opening</i></td>
+            <td><b>YTI</b><br><i>Cancelling of Route Opening</i></td>
             <td>If the route is queued to open, removes the route from the queue.</td>
             <td>YTI 155 201 / YTI 155</td>
         </tr>
         <tr>
-            <td><b>CTI</b><br>Çoklu Tanzimli Yol İptali<br><i>Cancelling of Multiple Opened Routes</i></td>
+            <td><b>CTI</b><br><i>Cancelling of Multiple Opened Routes</i></td>
             <td>Cancels the opened route between specified signals.</td>
             <td>CTI 155 201</td>
         </tr>
         <tr>
-            <td><b>TYI</b><br>Tanzimli Yol İptali<br><i>Cancelling of Opened Route</i></td>
+            <td><b>TYI</b><br><i>Cancelling of Opened Route</i></td>
             <td>If a route has been opened in the last 15 seconds, cancels this route. If a signal is specified, cancels the route between this signal and the next.</td>
             <td>TYI / TYI 155</td>
         </tr>
         <tr>
-            <td><b>OBL</b><br>Otomatik Bloke<br><i>Block Automatic</i></td>
+            <td><b>OBL</b><br><i>Block Automatic</i></td>
             <td>Disables the automatic mode of the signal. Routes can again be opened with YTT.</td>
             <td>OBL 156</td>
         </tr>
         <tr>
-            <td><b>OSE</b><br>Otomatik Serbest<br><i>Set Automatic Free</i></td>
+            <td><b>OSE</b><br><i>Set Automatic Free</i></td>
             <td>Makes the specified signal an automatic block signal. In this mode, a new route opening request to the next signal is made every time the signal is passed.</td>
             <td>OSE 156</td>
         </tr>
         <tr>
-            <td><b>TSK</b><br>Tüm Sinyaller Kapalı<br><i>Close All Signals</i></td>
+            <td><b>TSK</b><br><i>Close All Signals</i></td>
             <td>Closes all of the signals.</td>
             <td>TSK</td>
         </tr>
         <tr>
-            <td><b>BSK</b><br>Blok Sinyali Kapalı<br><i>Close Block Signal</i></td>
+            <td><b>BSK</b><br><i>Close Block Signal</i></td>
             <td>Closes and blocks the signal.</td>
             <td>BSK 155</td>
         </tr>
         <tr>
-            <td><b>KSI</b><br>Kapalı Sinyal İptali<br><i>Cancel Closed Signal</i></td>
+            <td><b>KSI</b><br><i>Cancel Closed Signal</i></td>
             <td>Removes the blocking of the signal. Signal goes back to normal operation.</td>
             <td>KSI 155</td>
         </tr>
         <tr>
-            <td><b>STH</b><br>Sinyaller Tanzime Hazır<br><i>Signals Ready for Opening</i></td>
+            <td><b>STH</b><br><i>Signals Ready for Opening</i></td>
             <td>Opens the routes of all automatic signals.</td>
             <td>STH</td>
         </tr>
         <tr>
-            <td><b>MBL</b><br>Makas Bloke<br><i>Block Switch</i></td>
+            <td><b>MBL</b><br><i>Block Switch</i></td>
             <td>Blocks the specified switch.</td>
             <td>MBL 421</td>
         </tr>
         <tr>
-            <td><b>MSE</b><br>Makas Serbest<br><i>Set Switch Free</i></td>
+            <td><b>MSE</b><br><i>Set Switch Free</i></td>
             <td>Releases the specified switch.</td>
             <td>MSE 421</td>
         </tr>
         <tr>
-            <td><b>MLK</b><br>Makas Lokal Kumanda<br><i>Switch Local Control</i></td>
+            <td><b>MLK</b><br><i>Switch Local Control</i></td>
             <td>Puts the specified switch in local control. Switches in this mode cannot be controlled from the Electronic Interlocking system.</td>
             <td>MLK 421</td>
         </tr>
         <tr>
-            <td><b>MMK</b><br>Makas Merkezi Kumanda<br><i>Switch Central Control</i></td>
+            <td><b>MMK</b><br><i>Switch Central Control</i></td>
             <td>Puts the specified switch back to central control.</td>
             <td>MMK 421</td>
         </tr>
         <tr>
-            <td><b>MSA</b><br>Makas Sağa<br><i>Switch to Right</i></td>
+            <td><b>MSA</b><br><i>Switch to Right</i></td>
             <td>Sets the specified switch to the right position.</td>
             <td>MSA 421</td>
         </tr>
         <tr>
-            <td><b>MSO</b><br>Makas Sola<br><i>Switch to Left</i></td>
+            <td><b>MSO</b><br><i>Switch to Left</i></td>
             <td>Sets the specified switch to the left position.</td>
             <td>MSO 421</td>
         </tr>
         <tr>
-            <td><b>MNG</b><br>Makas Numaralarını Göster<br><i>Show Switch Numbers</i></td>
+            <td><b>MNG</b><br><i>Show Switch Numbers</i></td>
             <td>Shows the switches' numbers.</td>
             <td>MNG</td>
         </tr>
         <tr>
-            <td><b>SSG</b><br>Sinyal Numaralarını Göster<br><i>Show Signal Numbers</i></td>
+            <td><b>SSG</b><br><i>Show Signal Numbers</i></td>
             <td>Shows the signals' numbers.</td>
             <td>SSG</td>
         </tr>
         <tr>
-            <td><b>RDG</b><br>Ray Devrelerini Göster<br><i>Show Track Circuits</i></td>
+            <td><b>RDG</b><br><i>Show Track Circuits</i></td>
             <td>Shows the track circuits' numbers.</td>
             <td>RDG</td>
         </tr>
         <tr>
-            <td><b>SMG</b><br>Hiçbir Obje Gösterme<br><i>Don't Show Any Objects</i></td>
+            <td><b>SMG</b><br><i>Don't Show Any Objects</i></td>
             <td>Removes all of the objects from the screen.</td>
             <td>SMG</td>
         </tr>
         <tr>
-            <td><b>TND</b><br>Tren Numarasını Değiştir<br><i>Change Train Number</i></td>
+            <td><b>TND</b><br><i>Change Train Number</i></td>
             <td>Changes the number of the desired train.</td>
             <td>TND 12301 12302</td>
         </tr>
         <tr>
-            <td><b>TNS</b><br>Tren Numarasını Sil<br><i>Delete Train Number</i></td>
+            <td><b>TNS</b><br><i>Delete Train Number</i></td>
             <td>Deletes the number of the desired train.</td>
             <td>TNS 12301</td>
         </tr>
         <tr>
-            <td><b>STG</b><br>Sinyalde Tren Göster<br><i>Show Train at Signal</i></td>
+            <td><b>STG</b><br><i>Show Train at Signal</i></td>
             <td>Changes the number of the incoming train to the signal.</td>
             <td>STG 208 12301</td>
         </tr>
         <tr>
-            <td><b>STS</b><br>Sinyaldeki Treni Sil<br><i>Delete Train at Signal</i></td>
+            <td><b>STS</b><br><i>Delete Train at Signal</i></td>
             <td>Deletes the number of the incoming train to the signal.</td>
             <td>STS 208</td>
         </tr>
         <tr>
-            <td><b>TYL</b><br>Tren Yer Listesi<br><i>Train Position List</i></td>
+            <td><b>TYL</b><br><i>Train Position List</i></td>
             <td>Shows a list of the trains' positions and the next closed signals.</td>
             <td>TYL</td>
         </tr>
         <tr>
-            <td><b>SAM</b><br>Sinyal Akşam Modu<br><i>Signal Night Mode</i></td>
+            <td><b>SAM</b><br><i>Signal Night Mode</i></td>
             <td>Puts the signals in night mode and dims them.</td>
             <td>SAM</td>
         </tr>
         <tr>
-            <td><b>SGM</b><br>Sinyal Gündüz Modu<br><i>Signal Day Mode</i></td>
+            <td><b>SGM</b><br><i>Signal Day Mode</i></td>
             <td>Puts the signals in day mode and brightens them.</td>
             <td>SGM</td>
         </tr>
